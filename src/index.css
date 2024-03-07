@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+:is(input, button):focus {
+  outline: none;
+}
+@layer components {
+  h2 {
+    @apply header-s;
+  }
+  h3 {
+    @apply header-xs;
+  }
+  button {
+    @apply btn;
+  }
+}
+@layer utilities {
+  .header-s {
+    @apply text-2xl font-semibold;
+  }
+  .header-xs {
+    @apply text-xl font-medium;
+  }
+  .btn {
+    @apply font-medium text-base;
+  }
+  .caption {
+    @apply text-xs;
+  }
+  .tools{
+    @apply w-[18px] h-[18px] cursor-pointer p-4 grid place-content-center hover:bg-black transition text-gray-200  hover:bg-opacity-[12%] rounded-full
+  }
+}
+
