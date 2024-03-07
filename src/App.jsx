@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useEffect } from "react";
 const router = createBrowserRouter([
   {
-    path: "/notely",
+    path: "/notely/",
     element: <Layout />,
     children: [
       { index: true, element: <All /> },
