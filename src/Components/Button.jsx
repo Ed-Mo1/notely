@@ -1,9 +1,9 @@
-const Button = ({ role, event, children, type }) => {
+const Button = ({ role, event, children, type ,style }) => {
   return (
     <button
       type={type}
       onClick={event}
-      className={`flex hover:opacity-[0.8] transition items-center gap-2 py-2 px-3 rounded-full ${
+      className={` hover:opacity-[0.8] ${style}  transition block items-center gap-2 py-2 px-3 rounded-full ${
         role == "add" || role == "update"
           ? "bg-blue-400 text-white "
           : role == "del"

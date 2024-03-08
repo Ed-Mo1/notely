@@ -7,11 +7,13 @@ const Header = () => {
   return (
     <>
       <div className="bg-white shadow-lg py-2">
-        <div className="container flex items-center gap-2">
+        <div className="container flex items-center gap-2 flex-wrap">
           <SearchBar />
-          <Button role="add" event={() => dispatch(isOpen())}>
-            <span>+</span>
+         <div className="max-sm:w-full">
+         <Button role="add" style={'w-full'} event={() => dispatch(isOpen())}>
+            <span className="mr-1">+</span>
           </Button>
+         </div>
         </div>
       </div>
     </>
