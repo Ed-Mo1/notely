@@ -15,7 +15,7 @@ const NotesCard = ({ title, desc, category, completed, time }) => {
       <div
         className={`${
           completed && "bg-opacity-[24%]"
-        } bg-white p-5 shadow-lg rounded-lg flex flex-col justify-between transition`}
+        } bg-white p-5 shadow-lg rounded-lg flex flex-col transition`}
       >
         <div className="flex justify-between items-center">
           <NotesCategory category={category} completed={completed} />
@@ -50,16 +50,16 @@ const NotesCard = ({ title, desc, category, completed, time }) => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="flex-grow-[1]">
           <h2
-            className={`mt-5 text-gray-900 transition ${
+            className={`mt-5 text-gray-900 transition break-words ${
               completed && "line-through text-opacity-[36%]"
             }`}
           >
             {title}
           </h2>
           <p
-            className={`mt-3 text-gray-900 transition ${
+            className={`mt-3 text-gray-900 transition break-words ${
               completed && "line-through text-opacity-[36%]"
             }`}
           >

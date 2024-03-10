@@ -19,7 +19,7 @@ const Nav = () => {
                   isActive
                     ? "text-blue-400 before:bg-blue-400 hover:text-opacity-[60%] before:h-[3px] before:bottom-[-1%] hover:before:bg-opacity-[60%] before:rounded-full"
                     : "text-gray-900 text-opacity-[60%] before:bg-black before:bg-opacity-[12%] before:h-[2px]"
-                } max-md:px-3 px-8 pb-4 relative  transition before:absolute before:left-0 before:bottom-0 before:w-full`
+                } max-sm:text-sm max-md:px-3 px-8 pb-4 relative  transition before:absolute before:left-0 before:bottom-0 before:w-full`
               }
             >
               {name}
