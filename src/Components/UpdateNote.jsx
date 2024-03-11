@@ -29,7 +29,7 @@ const UpdateNote = ({ time }) => {
   };
 
   return ReactDOM.createPortal(
-    <div className="bg-white shadow-2xl p-5 w-full max-w-[95%] sm:max-w-[600px] z-40 rounded-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div className="bg-white shadow-2xl p-5 w-full max-w-[95%] sm:max-w-[600px] z-40 rounded-lg fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div className="flex justify-between items-center">
         <h2 className="mb-5">Update note</h2>
         <IoMdClose className="text-2xl cursor-pointer" onClick={handleClose} />

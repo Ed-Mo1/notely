@@ -12,11 +12,10 @@ const Layout = () => {
   const timeData = useSelector(({ updateNote }) => updateNote.time);
   const showAdd = useSelector(({ addNote }) => addNote);
   const { show } = useSelector(({ deleteNote }) => deleteNote);
-
   useEffect(() => {
     showAdd || showUpdate || show
-      ? document.body.classList.add("overflow-hidden")
-      : document.body.classList.remove("overflow-hidden");
+      ? document.body.classList.add("h-screen", "overflow-hidden")
+      : document.body.classList.remove("overflow-hidden",'h-screen');
   }, [showAdd, showUpdate, show]);
   return (
     <>
