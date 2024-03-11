@@ -9,7 +9,7 @@ const DeletNote = () => {
   const { item } = useSelector((state) => state.deleteNote);
   const dispatch = useDispatch();
   return ReactDom.createPortal(
-    <div className="bg-white shadow-2xl p-5 w-full max-w-[95%] sm:max-w-[600px] z-40 rounded-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div className="bg-white shadow-2xl p-5 w-full max-w-[95%] sm:max-w-[600px] z-40 rounded-lg fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div className="flex justify-between items-center mb-5">
         <h2>Delete note</h2>
         <IoMdClose
