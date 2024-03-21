@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IoMdClose } from "react-icons/io";
 import { setShow } from "../rtk/slices/addUpdateSlice";
 import { addNote, editNote } from "../rtk/slices/notesSlice";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 const validsationSchema = Yup.object().shape({
   title: Yup.string().required("This field is required"),
   desc: Yup.string().max(200, "Must be 200 characters or less").optional(),
@@ -38,7 +38,7 @@ const AddUpdateNote = () => {
         exit={{ opacity: 0, scale: 0 }}
       >
         <div className="flex justify-between items-center">
-          <h2 className="mb-5">Add note</h2>
+          <h2 className="mb-5"> {role == "add" ? "Add note" : "Edit note"}</h2>
           <IoMdClose
             className="text-2xl cursor-pointer"
             onClick={() => dispatch(setShow())}
