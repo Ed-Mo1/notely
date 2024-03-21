@@ -19,6 +19,7 @@ const DeletNote = () => {
           x: "-50%",
           y: "-50%",
         }}
+        exit={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         className="bg-white shadow-2xl p-5 w-full max-w-[95%] sm:max-w-[600px] z-40 rounded-lg fixed"
       >

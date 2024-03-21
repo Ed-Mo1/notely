@@ -21,7 +21,7 @@ const Layout = () => {
     <>
       <div className="min-h-screen bg-[#EEEEEE]">
         <Header />
-        <div className="container ">
+        <div className="container">
           <div>
             <Nav />
           </div>
