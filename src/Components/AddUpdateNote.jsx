@@ -38,7 +38,7 @@ const AddUpdateNote = () => {
         exit={{ opacity: 0, scale: 0 }}
       >
         <div className="flex justify-between items-center">
-          <h2 className="mb-5"> {role == "add" ? "Add note" : "Edit note"}</h2>
+          <h2 className="mb-5">{role == "add" ? "Add note" : "Edit note"}</h2>
           <IoMdClose
             className="text-2xl cursor-pointer"
             onClick={() => dispatch(setShow())}
