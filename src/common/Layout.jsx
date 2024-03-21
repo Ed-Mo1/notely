@@ -2,21 +2,21 @@ import { Outlet } from "react-router-dom";
 import Header from "../Components/Header";
 import Nav from "../Components/Nav";
 import { useSelector } from "react-redux";
-import AddNote from "../Components/AddNote";
+import AddUpdateNote from "../Components/AddUpdateNote";
 import DeletNote from "../Components/DeletNote";
 import { useEffect } from "react";
-import UpdateNote from "../Components/UpdateNote";
+import { AnimatePresence } from "framer-motion";
 
 const Layout = () => {
-  const showUpdate = useSelector(({ updateNote }) => updateNote.isOpen);
-  const timeData = useSelector(({ updateNote }) => updateNote.time);
-  const showAdd = useSelector(({ addNote }) => addNote);
-  const { show } = useSelector(({ deleteNote }) => deleteNote);
+  const { show: showAddUpdate } = useSelector(
+    ({ addUpdateSlice }) => addUpdateSlice
+  );
+  const { show: showDelete } = useSelector(({ deleteNote }) => deleteNote);
   useEffect(() => {
-    showAdd || showUpdate || show
+    showAddUpdate || showDelete
       ? document.body.classList.add("h-screen", "overflow-hidden")
-      : document.body.classList.remove("overflow-hidden",'h-screen');
-  }, [showAdd, showUpdate, show]);
+      : document.body.classList.remove("overflow-hidden", "h-screen");
+  }, [showAddUpdate, showDelete]);
   return (
     <>
       <div className="min-h-screen bg-[#EEEEEE]">
@@ -28,15 +28,10 @@ const Layout = () => {
           <Outlet />
         </div>
       </div>
-      {showAdd && <AddNote />}
-
-      {show && <DeletNote />}
-
-      {showUpdate && <UpdateNote time={timeData} />}
-
-      {(showUpdate || showAdd || show) && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-20" />
-      )}
+      <AnimatePresence>
+        {showAddUpdate && <AddUpdateNote />}
+        {showDelete && <DeletNote />}
+      </AnimatePresence>
     </>
   );
 };

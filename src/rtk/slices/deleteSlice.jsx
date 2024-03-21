@@ -4,17 +4,17 @@ const deleteSlice = createSlice({
   name: "deleteNote",
   initialState: {
     show: false,
-    item: null,
+    id: null,
   },
   reducers: {
     setShow(state) {
       state.show = !state.show;
     },
-    setDelete(state, action) {
-      state.item = action.payload;
+    setID(state, action) {
+      state.id = action.payload;
     },
   },
 });
 
-export const { setShow, setDelete } = deleteSlice.actions;
+export const { setShow, setID } = deleteSlice.actions;
 export default deleteSlice.reducer

@@ -1,6 +1,7 @@
 import { RiSearch2Line } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { setSearchValue } from "../rtk/slices/searchedNoteSlice";
+
 const SearchBar = () => {
   const dispatch = useDispatch();
   return (

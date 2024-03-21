@@ -2,10 +2,18 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 import NotesCategory from "./NotesCategory";
 import { MdModeEdit } from "react-icons/md";
 import { completeNote } from "../rtk/slices/notesSlice";
-import { useDispatch } from "react-redux";
-import { isOpen, setTime } from "../rtk/slices/openUpdateSlice";
-import { setDelete, setShow } from "../rtk/slices/deleteSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setRole,
+  setId as setUpdateId,
+  setShow as showUpdateForm,
+} from "../rtk/slices/addUpdateSlice";
+import {
+  setID as setDeleteID,
+  setShow as showDeleteForm,
+} from "../rtk/slices/deleteSlice";
 const NotesCard = ({ title, desc, category, completed, time }) => {
+  const { role } = useSelector(({ addUpdateSlice }) => addUpdateSlice);
   const dispatch = useDispatch();
   return (
     <div
@@ -29,8 +37,8 @@ const NotesCard = ({ title, desc, category, completed, time }) => {
           <div
             className="tools"
             onClick={() => {
-              dispatch(setShow());
-              dispatch(setDelete(time));
+              dispatch(showDeleteForm());
+              dispatch(setDeleteID(time));
             }}
           >
             <RiDeleteBin6Fill />
@@ -38,8 +46,9 @@ const NotesCard = ({ title, desc, category, completed, time }) => {
           <div
             className="tools"
             onClick={() => {
-              dispatch(setTime(time));
-              dispatch(isOpen());
+              role !== "update" && dispatch(setRole("update"));
+              dispatch(setUpdateId(time));
+              dispatch(showUpdateForm());
             }}
           >
             <MdModeEdit />
