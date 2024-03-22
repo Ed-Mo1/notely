@@ -46,7 +46,8 @@ const DeletNote = () => {
       </motion.div>
       <div
         onClick={() => dispatch(setShow())}
-      className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-20" />
+        className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-20"
+      />
     </>,
     document.getElementById("delete-module")
   );
